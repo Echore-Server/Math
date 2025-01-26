@@ -56,15 +56,15 @@ class Vector2{
 	}
 
 	public function addVector(Vector2 $vector2) : Vector2{
-		return $this->add($vector2->x, $vector2->y);
+		return new Vector2($this->x + $vector2->x, $this->y + $vector2->y);
 	}
 
 	public function subtract(float $x, float $y) : Vector2{
-		return $this->add(-$x, -$y);
+		return new Vector2($this->x - $x, $this->y - $y);
 	}
 
 	public function subtractVector(Vector2 $vector2) : Vector2{
-		return $this->add(-$vector2->x, -$vector2->y);
+		return new Vector2($this->x + $vector2->x, $this->y + $vector2->y);
 	}
 
 	public function ceil() : Vector2{
@@ -88,7 +88,8 @@ class Vector2{
 	}
 
 	public function divide(float $number) : Vector2{
-		return new Vector2($this->x / $number, $this->y / $number);
+		$f = 1 / $number;
+		return new Vector2($this->x * $f, $this->y * $f);
 	}
 
 	public function distance(Vector2 $pos) : float{

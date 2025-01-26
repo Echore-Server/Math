@@ -1,8 +1,9 @@
 {
-    "name": "pocketmine/math",
+    "name": "echore/math",
     "description": "PHP library containing math related code used in PocketMine-MP",
     "type": "library",
     "license": "LGPL-3.0",
+	"version": "1.0.0",
     "require": {
         "php": "^8.1",
         "php-64bit": "*"

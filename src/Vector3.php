@@ -75,15 +75,15 @@ class Vector3{
 	}
 
 	public function addVector(Vector3 $v) : Vector3{
-		return $this->add($v->x, $v->y, $v->z);
+		return new Vector3($this->x + $v->x, $this->y + $v->y, $this->z + $v->z);
 	}
 
 	public function subtract(float|int $x, float|int $y, float|int $z) : Vector3{
-		return $this->add(-$x, -$y, -$z);
+		return new Vector3($this->x - $x, $this->y -$y, $this->z - $z);
 	}
 
 	public function subtractVector(Vector3 $v) : Vector3{
-		return $this->add(-$v->x, -$v->y, -$v->z);
+		return new Vector3($this->x - $v->x, $this->y - $v->y, $this->z - $v->z);
 	}
 
 	public function multiply(float $number) : Vector3{
@@ -91,7 +91,8 @@ class Vector3{
 	}
 
 	public function divide(float $number) : Vector3{
-		return new Vector3($this->x / $number, $this->y / $number, $this->z / $number);
+		$f = 1 / $number;
+		return new Vector3($this->x * $f, $this->y * $f, $this->z * $f);
 	}
 
 	public function ceil() : Vector3{
