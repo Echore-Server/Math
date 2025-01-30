@@ -64,7 +64,7 @@ class Vector2{
 	}
 
 	public function subtractVector(Vector2 $vector2) : Vector2{
-		return new Vector2($this->x + $vector2->x, $this->y + $vector2->y);
+		return new Vector2($this->x - $vector2->x, $this->y - $vector2->y);
 	}
 
 	public function ceil() : Vector2{
